@@ -14,11 +14,17 @@
         android:layout_height="wrap_content"
         android:text="@string/food" />
 
-    <TextView
-        android:autoLink="web"
-        android:text="@string/friedrice_desc"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="64dp">
+        <TextView
+            android:textColor="@color/black"
+            android:lineSpacingExtra="4sp"
+            android:autoLink="web"
+            android:text="@string/friedrice_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
