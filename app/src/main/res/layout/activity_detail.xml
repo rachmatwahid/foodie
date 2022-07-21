@@ -9,14 +9,14 @@
     tools:context=".DetailActivity">
 
     <TextView
-        android:id="@+id/foodDetailTextView"
+        android:id="@+id/foodName_textView"
         style="@style/TextAppearance.MaterialComponents.Headline3"
         android:text="@string/food"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/foodDescriptionTextView"
+        android:id="@+id/foodDescription_textView"
         android:layout_weight="1"
         style="@style/TextAppearance.MaterialComponents.Body1"
         android:text="@string/friedrice_desc"
@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"/>
 
     <Button
+        android:onClick="orderOne"
         android:text="Order Now"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
