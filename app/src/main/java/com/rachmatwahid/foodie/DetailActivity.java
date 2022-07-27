@@ -25,7 +25,7 @@ public class DetailActivity extends AppCompatActivity {
         foodNameTextView.setText(foodName);
     }
 
-    public void orderOne(View view) {
+    public void orderNow(View view) {
         Intent intent = new Intent();
         intent.putExtra(EXTRA_ORDER, 1);
         setResult(RESULT_OK, intent);
