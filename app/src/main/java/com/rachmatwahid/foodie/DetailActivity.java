@@ -1,6 +1,7 @@
 package com.rachmatwahid.foodie;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ShareCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,5 +31,14 @@ public class DetailActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_ORDER, 1);
         setResult(RESULT_OK, intent);
         finish();
+    }
+
+    public void share(View view) {
+        ShareCompat.IntentBuilder
+                .from(this)
+                .setType("text/plain")
+                .setChooserTitle("Share this with ")
+                .setText("Fried Rice")
+                .startChooser();
     }
 }
