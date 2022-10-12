@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView quantityTextView;
 
     public static final String EXTRA_FOOD_NAME = "NAME";
+    public static final String EXTRA_FOOD_QUANTITY = "QUANTITY";
     public static final int ORDER_REQUEST = 1;
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
@@ -68,44 +69,16 @@ public class MainActivity extends AppCompatActivity {
         outState.putByte("SAVED_QUANTITY", quantity);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(LOG_TAG, "onStart");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(LOG_TAG, "onPause");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d(LOG_TAG, "onRestart");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(LOG_TAG, "onResume");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(LOG_TAG, "onStop");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(LOG_TAG, "onDestroy");
-    }
-
     public void launchAboutActivity(View view) {
         Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
+    }
+
+    public void showCart(View view) {
+        Intent intent = new Intent(this, CartActivity.class);
+        intent.putExtra(EXTRA_FOOD_NAME, foodName);
+        intent.putExtra(EXTRA_FOOD_QUANTITY, quantity);
+        startActivity(intent);
+
     }
 }

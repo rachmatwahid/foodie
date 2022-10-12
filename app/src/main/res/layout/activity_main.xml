@@ -62,6 +62,7 @@
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:onClick="showCart"
         android:src="@drawable/cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
