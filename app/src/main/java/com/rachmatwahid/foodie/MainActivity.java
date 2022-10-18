@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private byte quantity = 0;
     private String foodName = "Fried Rice";
     private String chefNote;
-    private boolean diningOption;
+    private boolean isTakeAway;
 
     private TextView quantityTextView;
     private EditText chefNoteEditText;
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_FOOD_NAME = "NAME";
     public static final String EXTRA_FOOD_QUANTITY = "QUANTITY";
     public static final String EXTRA_CHEF_NOTE = "CHEFNOTE";
+    public static final String EXTRA_DELIVERY_OPT = "DELIVERYOPT";
 
     public static final int ORDER_REQUEST = 1;
 
@@ -92,12 +93,19 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_FOOD_NAME, foodName);
         intent.putExtra(EXTRA_FOOD_QUANTITY, quantity);
         intent.putExtra(EXTRA_CHEF_NOTE, chefNote);
+        intent.putExtra(EXTRA_DELIVERY_OPT, isTakeAway);
         startActivity(intent);
-
     }
 
     public void setDiningOption(View view) {
         boolean radioChecked = ((RadioButton) view).isChecked();
-
+        switch (view.getId()) {
+            case R.id.dine_radio:
+                if (radioChecked) isTakeAway = false;
+                break;
+            case R.id.take_radio:
+                if (radioChecked) isTakeAway = true;
+                break;
+        }
     }
 }
