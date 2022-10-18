@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private byte quantity = 0;
     private String foodName = "Fried Rice";
     private String chefNote;
+    private boolean diningOption;
 
     private TextView quantityTextView;
     private EditText chefNoteEditText;
@@ -91,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_FOOD_QUANTITY, quantity);
         intent.putExtra(EXTRA_CHEF_NOTE, chefNote);
         startActivity(intent);
+
+    }
+
+    public void setDiningOption(View view) {
+        boolean radioChecked = ((RadioButton) view).isChecked();
 
     }
 }

@@ -8,4 +8,6 @@
     <string name="about">About</string>
     <string name="cart">Cart</string>
     <string name="nonspicy">Tidak pedas, ya!</string>
+    <string name="dine_in">Dine-In</string>
+    <string name="take_away">Take away</string>
 </resources>
