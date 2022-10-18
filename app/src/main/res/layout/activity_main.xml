@@ -54,11 +54,18 @@
                 android:text="@string/plus" />
         </LinearLayout>
 
+        <EditText
+            android:id="@+id/chefNote_editText"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="launchAboutActivity"
-            android:text="About" />
+            android:text="@string/about" />
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -66,5 +73,6 @@
         android:src="@drawable/cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end" />
+        android:layout_gravity="bottom|end"
+        android:contentDescription="@string/cart" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

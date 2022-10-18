@@ -8,18 +8,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private byte quantity = 0;
     private String foodName = "Fried Rice";
+    private String chefNote;
 
     private TextView quantityTextView;
+    private EditText chefNoteEditText;
 
     public static final String EXTRA_FOOD_NAME = "NAME";
     public static final String EXTRA_FOOD_QUANTITY = "QUANTITY";
+    public static final String EXTRA_CHEF_NOTE = "CHEFNOTE";
+
     public static final int ORDER_REQUEST = 1;
+
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     @Override
@@ -27,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.d(LOG_TAG, "onCreate");
+
         quantityTextView = findViewById(R.id.quantityTextView);
+        chefNoteEditText = findViewById(R.id.chefNote_editText);
 
         if (savedInstanceState != null) {
             quantity = savedInstanceState.getByte("SAVED_QUANTITY");
@@ -75,9 +84,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showCart(View view) {
+        chefNote = chefNoteEditText.getText().toString();
+
         Intent intent = new Intent(this, CartActivity.class);
         intent.putExtra(EXTRA_FOOD_NAME, foodName);
         intent.putExtra(EXTRA_FOOD_QUANTITY, quantity);
+        intent.putExtra(EXTRA_CHEF_NOTE, chefNote);
         startActivity(intent);
 
     }
