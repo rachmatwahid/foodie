@@ -5,30 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp"
     tools:context=".CartActivity">
 
     <TextView
         android:id="@+id/foodName_textView_cart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/food" />
+        android:text="Fried Rice" />
 
     <TextView
         android:id="@+id/quantity_textView_cart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/zero" />
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/chefNote_TextView_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/chefnote" />
 
     <TextView
         android:id="@+id/deliveryOpt_textView_cart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:text="@string/nonspicy"
-        android:id="@+id/chefNote_TextView_cart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="wrap_content"
+        android:text="@string/take_away" />
 </LinearLayout>
