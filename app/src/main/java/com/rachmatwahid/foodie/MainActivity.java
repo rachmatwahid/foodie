@@ -8,6 +8,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putByte("SAVED_QUANTITY", quantity);
     }
 
-    public void launchAboutActivity(View view) {
+    public void launchAboutActivity(MenuItem item) {
         Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
     }
@@ -110,5 +112,11 @@ public class MainActivity extends AppCompatActivity {
                 if (radioChecked) isTakeAway = true;
                 break;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
     }
 }

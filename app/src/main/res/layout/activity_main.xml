@@ -12,21 +12,21 @@
         android:theme="@style/Theme.Foodie.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
-            app:title="Order Here"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.Foodie.PopupOverlay" />
+            app:popupTheme="@style/Theme.Foodie.PopupOverlay"
+            app:title="Order Here" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:padding="8dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -72,46 +72,39 @@
 
         <EditText
             android:id="@+id/chefNote_editText"
-            android:hint="@string/chefnote"
-            android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:importantForAutofill="no" />
+            android:hint="@string/chefnote"
+            android:importantForAutofill="no"
+            android:inputType="text" />
 
         <RadioGroup
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/dine_radio"
-                android:onClick="setDiningOption"
-                android:text="@string/dine_in"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:onClick="setDiningOption"
+                android:text="@string/dine_in" />
 
             <RadioButton
                 android:id="@+id/take_radio"
-                android:onClick="setDiningOption"
-                android:text="@string/take_away"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:onClick="setDiningOption"
+                android:text="@string/take_away" />
         </RadioGroup>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="launchAboutActivity"
-            android:text="@string/about" />
-
 
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:onClick="showCart"
-        android:src="@drawable/cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:contentDescription="@string/cart" />
+        android:contentDescription="@string/cart"
+        android:onClick="showCart"
+        android:src="@drawable/cart" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

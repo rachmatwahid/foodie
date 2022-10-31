@@ -1,11 +1,11 @@
 package com.rachmatwahid.foodie;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class CartActivity extends AppCompatActivity {
@@ -41,4 +41,9 @@ public class CartActivity extends AppCompatActivity {
         }
     }
 
+
+    public void showDatePicker(View view) {
+        DialogFragment dialogFragment = new DatePickerFragment();
+        dialogFragment.show(getSupportFragmentManager(),"datePicker");
+    }
 }

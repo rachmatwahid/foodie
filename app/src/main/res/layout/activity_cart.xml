@@ -7,6 +7,12 @@
     android:orientation="vertical"
     tools:context=".CartActivity">
 
+    <Button
+        android:onClick="showDatePicker"
+        android:text="1 JAN 2022"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <TextView
         android:id="@+id/foodName_textView_cart"
         android:layout_width="match_parent"
