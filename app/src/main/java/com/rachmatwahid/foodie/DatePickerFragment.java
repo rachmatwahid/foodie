@@ -16,7 +16,12 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
+        CartActivity cartActivity = (CartActivity) getActivity();
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DATE, dayOfMonth);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.YEAR, year);
+        cartActivity.processDatePickerResult(calendar);
     }
 
     @NonNull

@@ -8,6 +8,7 @@
     tools:context=".CartActivity">
 
     <Button
+        android:id="@+id/date_button"
         android:onClick="showDatePicker"
         android:text="1 JAN 2022"
         android:layout_width="match_parent"
