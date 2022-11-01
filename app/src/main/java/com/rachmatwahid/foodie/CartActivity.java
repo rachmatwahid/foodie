@@ -1,13 +1,16 @@
 package com.rachmatwahid.foodie;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -39,7 +42,6 @@ public class CartActivity extends AppCompatActivity {
         chefNoteTextView = findViewById(R.id.chefNote_TextView_cart);
         deliveryOptTextView = findViewById(R.id.deliveryOpt_textView_cart);
         dateButton = findViewById(R.id.date_button);
-
 
 
         dateButton.setText(setInitialDate());
@@ -75,4 +77,10 @@ public class CartActivity extends AppCompatActivity {
         dateButton.setText(date + " " + month + " " + year);
     }
 
+    public void cookNow(View view) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(CartActivity.this);
+        alertDialog.setTitle("Cook Now");
+        alertDialog.setMessage("The kitchen will start cooking the order.");
+        alertDialog.show();
+    }
 }
