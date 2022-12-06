@@ -1,7 +1,9 @@
 package com.rachmatwahid.foodie;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 
 import android.content.DialogInterface;
@@ -25,11 +27,18 @@ public class CartActivity extends AppCompatActivity {
     TextView chefNoteTextView;
     TextView deliveryOptTextView;
     Button dateButton;
+    Toolbar toolbar;
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+
+        toolbar = findViewById(R.id.cart_toolbar);
+        setSupportActionBar(toolbar);
+        actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
         String foodName = intent.getStringExtra(MainActivity.EXTRA_FOOD_NAME);

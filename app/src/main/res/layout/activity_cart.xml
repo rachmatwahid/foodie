@@ -5,44 +5,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp"
     tools:context=".CartActivity">
 
-    <Button
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:id="@+id/date_button"
-        android:onClick="showDatePicker"
-        android:text="1 JAN 2022"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/foodName_textView_cart"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fried Rice" />
+        android:theme="@style/Theme.Foodie.AppBarOverlay">
 
-    <TextView
-        android:id="@+id/quantity_textView_cart"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/cart_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="1" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/Theme.Foodie.PopupOverlay"
+        app:title="Cart" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
-        android:id="@+id/chefNote_TextView_cart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/chefnote" />
+    <LinearLayout
+        android:padding="8dp"
 
-    <TextView
-        android:id="@+id/deliveryOpt_textView_cart"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/take_away" />
+        android:layout_height="match_parent">
+        <Button
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:id="@+id/date_button"
+            android:onClick="showDatePicker"
+            android:text="1 JAN 2022"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <Button
-        android:onClick="cookNow"
-        android:text="Cook Now"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/foodName_textView_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fried Rice" />
+
+        <TextView
+            android:id="@+id/quantity_textView_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/chefNote_TextView_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chefnote" />
+
+        <TextView
+            android:id="@+id/deliveryOpt_textView_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/take_away" />
+
+        <Button
+            android:onClick="cookNow"
+            android:text="Cook Now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 </LinearLayout>

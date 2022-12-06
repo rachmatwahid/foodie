@@ -1,6 +1,8 @@
 package com.rachmatwahid.foodie;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ShareCompat;
 
 import android.content.Intent;
@@ -12,12 +14,20 @@ public class DetailActivity extends AppCompatActivity {
 
     TextView foodNameTextView;
 
+    Toolbar toolbar;
+    ActionBar actionBar;
+
     public static final String EXTRA_ORDER = "ORDER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        toolbar = findViewById(R.id.detail_toolbar);
+        setSupportActionBar(toolbar);
+        actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
         String foodName = intent.getStringExtra(MainActivity.EXTRA_FOOD_NAME);
