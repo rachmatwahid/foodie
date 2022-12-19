@@ -39,7 +39,7 @@ public class DishesAdapter extends RecyclerView.Adapter<DishesAdapter.DishViewHo
         return dishes.size();
     }
 
-    class DishViewHolder extends RecyclerView.ViewHolder {
+    class DishViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public final TextView dishTextView;
         final DishesAdapter adapter;
@@ -48,6 +48,14 @@ public class DishesAdapter extends RecyclerView.Adapter<DishesAdapter.DishViewHo
             super(itemView);
             dishTextView = itemView.findViewById(R.id.dish_textView);
             this.adapter = adapter;
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getLayoutPosition();
+            String element = dishes.get(position);
+
+            adapter.notifyDataSetChanged();
         }
     }
 }
