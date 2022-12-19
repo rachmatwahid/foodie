@@ -48,11 +48,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        for (int i = 0; i < 5; i++) {
-            dishes.add("Fried Rice");
-            dishes.add("Chicken Noodle");
-            dishes.add("Satay");
-        }
+        dishes.add("Fried Rice");
+        dishes.add("Chicken Noodle");
+        dishes.add("Satay");
 
         recyclerView = findViewById(R.id.main_recyclerView);
         adapter = new DishesAdapter(this, dishes);

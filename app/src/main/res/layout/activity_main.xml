@@ -7,68 +7,72 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        app:liftOnScroll="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Foodie.AppBarOverlay">
+        android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.appbar.MaterialToolbar
+            app:layout_scrollFlags="scroll|enterAlways|snap"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.Foodie.PopupOverlay"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
             app:title="Order Here" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/main_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/main_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/chefNote_editText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/chefnote"
-                android:importantForAutofill="no"
-                android:inputType="text" />
+                android:orientation="vertical"
+                android:padding="8dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/dine_radio"
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/chefNote_editText"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="setDiningOption"
-                    android:text="@string/dine_in" />
+                    android:hint="@string/chefnote"
+                    android:importantForAutofill="no"
+                    android:inputType="text" />
 
-                <RadioButton
-                    android:id="@+id/take_radio"
-                    android:layout_width="wrap_content"
+                <RadioGroup
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="setDiningOption"
-                    android:text="@string/take_away" />
-            </RadioGroup>
+                    android:orientation="horizontal">
 
+                    <RadioButton
+                        android:id="@+id/dine_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="setDiningOption"
+                        android:text="@string/dine_in" />
+
+                    <RadioButton
+                        android:id="@+id/take_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="setDiningOption"
+                        android:text="@string/take_away" />
+                </RadioGroup>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-
+    </androidx.core.widget.NestedScrollView>
 
 
 
