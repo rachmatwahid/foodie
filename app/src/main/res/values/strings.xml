@@ -13,4 +13,28 @@
     <string name="chefnote">Not spicy</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="data_dish">
+        <item>Fried Rice</item>
+        <item>Noodle</item>
+        <item>Satay</item>
+    </string-array>
+
+    <integer-array name="data_photo">
+        <item>@drawable/fried_rice</item>
+        <item>@drawable/noodle</item>
+        <item>@drawable/satay</item>
+    </integer-array>
+
+    <integer-array name="data_quantity">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+
+    <integer-array name="data_price">
+        <item>10000</item>
+        <item>15000</item>
+        <item>20000</item>
+    </integer-array>
 </resources>

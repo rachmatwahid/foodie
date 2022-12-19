@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -46,6 +47,8 @@ public class CartActivity extends AppCompatActivity {
         String chefNote = intent.getStringExtra(MainActivity.EXTRA_CHEF_NOTE);
         boolean deliveryOpt = intent.getBooleanExtra(MainActivity.EXTRA_DELIVERY_OPT, false);
 
+        ArrayList<Dish> dishes = intent.getParcelableArrayListExtra("DISHES");
+
         foodNameTextView = findViewById(R.id.foodName_textView_cart);
         quantityTextView = findViewById(R.id.quantity_textView_cart);
         chefNoteTextView = findViewById(R.id.chefNote_TextView_cart);
@@ -54,8 +57,17 @@ public class CartActivity extends AppCompatActivity {
 
 
         dateButton.setText(setInitialDate());
-        foodNameTextView.setText(foodName);
-        quantityTextView.setText(String.valueOf(quantity));
+
+
+        String names = "";
+        String quantities= "";
+        for (Dish dish: dishes) {
+            names = names.concat(dish.getName());
+            quantities = quantities.concat(dish.getQuantity().toString());
+        }
+        foodNameTextView.setText(names);
+        quantityTextView.setText(quantities);
+
         chefNoteTextView.setText(chefNote);
         if (deliveryOpt) {
             deliveryOptTextView.setText("Take Away");
