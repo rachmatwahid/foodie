@@ -76,14 +76,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private ArrayList<Dish> getDishes() {
-        String[] dataName = getResources().getStringArray(R.array.data_dish);
-        int[] dataQuantity = getResources().getIntArray(R.array.data_quantity);
-        int[] dataPrice = getResources().getIntArray(R.array.data_price);
-        TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
+        String[] dataName = getResources().getStringArray(R.array.names);
+        String[] dataDescription = getResources().getStringArray(R.array.descriptions);
+        int[] dataQuantity = getResources().getIntArray(R.array.quantities);
+        int[] dataPrice = getResources().getIntArray(R.array.prices);
+        TypedArray dataPhoto = getResources().obtainTypedArray(R.array.images);
         ArrayList<Dish> dishes = new ArrayList<>();
         for (int i = 0; i < dataName.length; i++) {
             Dish dish = new Dish();
             dish.setName(dataName[i]);
+            dish.setDescription(dataDescription[i]);
             dish.setQuantity(dataQuantity[i]);
             dish.setPrice(dataPrice[i]);
             dish.setPhoto(dataPhoto.getResourceId(i, -1));

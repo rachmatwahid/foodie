@@ -1,5 +1,6 @@
 package com.rachmatwahid.foodie;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +58,15 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder
             dishImageView = itemView.findViewById(R.id.dish_imageView);
             subsButton = itemView.findViewById(R.id.subs_button);
             addButton = itemView.findViewById(R.id.add_button);
+
+            dishTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(view.getContext(), DetailActivity.class);
+                    intent.putExtra("DISH_EXTRA", dish);
+                    view.getContext().startActivity(intent);
+                }
+            });
 
             subsButton.setOnClickListener(new View.OnClickListener() {
                 @Override

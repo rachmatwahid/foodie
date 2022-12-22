@@ -4,8 +4,42 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Dish implements Parcelable {
+
+    public static final Parcelable.Creator<Dish> CREATOR = new Parcelable.Creator<Dish>() {
+        @Override
+        public Dish createFromParcel(Parcel source) {
+            return new Dish(source);
+        }
+        @Override
+        public Dish[] newArray(int size) {
+            return new Dish[size];
+        }
+    };
+
     private String name;
+    private String description;
     private Integer quantity;
+    private Integer price;
+    private Integer photo;
+
+    Dish() {
+    }
+
+    private Dish(Parcel in) {
+        this.name = in.readString();
+        this.description = in.readString();
+        this.quantity = in.readInt();
+        this.price = in.readInt();
+        this.photo = in.readInt();
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getName() {
         return name;
@@ -39,9 +73,6 @@ public class Dish implements Parcelable {
         this.photo = photo;
     }
 
-    private Integer price;
-    private Integer photo;
-
     @Override
     public int describeContents() {
         return 0;
@@ -50,27 +81,9 @@ public class Dish implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
+        dest.writeString(this.description);
         dest.writeInt(this.quantity);
         dest.writeInt(this.price);
         dest.writeInt(this.photo);
     }
-
-    Dish() {
-    }
-    private Dish(Parcel in) {
-        this.name = in.readString();
-        this.quantity = in.readInt();
-        this.price = in.readInt();
-        this.photo = in.readInt();
-    }
-    public static final Parcelable.Creator<Dish> CREATOR = new Parcelable.Creator<Dish>() {
-        @Override
-        public Dish createFromParcel(Parcel source) {
-            return new Dish(source);
-        }
-        @Override
-        public Dish[] newArray(int size) {
-            return new Dish[size];
-        }
-    };
 }

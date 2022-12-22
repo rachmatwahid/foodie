@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class DetailActivity extends AppCompatActivity {
 
-    TextView foodNameTextView;
+    TextView foodNameTextView, descriptionTextView;
 
     Toolbar toolbar;
     ActionBar actionBar;
@@ -32,8 +32,13 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String foodName = intent.getStringExtra(MainActivity.EXTRA_FOOD_NAME);
 
+        Dish dish = intent.getParcelableExtra("DISH_EXTRA");
+
         foodNameTextView = findViewById(R.id.foodName_textView);
-        foodNameTextView.setText(foodName);
+        descriptionTextView = findViewById(R.id.foodDescription_textView);
+
+        foodNameTextView.setText(dish.getName());
+        descriptionTextView`.setText(dish.getDescription());
     }
 
     public void orderNow(View view) {
