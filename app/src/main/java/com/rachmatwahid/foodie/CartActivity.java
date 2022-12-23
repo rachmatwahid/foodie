@@ -23,8 +23,7 @@ public class CartActivity extends AppCompatActivity {
 
     String day, month, year, date;
 
-    TextView foodNameTextView;
-    TextView quantityTextView;
+    TextView orderTextView;
     TextView chefNoteTextView;
     TextView deliveryOptTextView;
     Button dateButton;
@@ -49,8 +48,7 @@ public class CartActivity extends AppCompatActivity {
 
         ArrayList<Dish> dishes = intent.getParcelableArrayListExtra("DISHES");
 
-        foodNameTextView = findViewById(R.id.foodName_textView_cart);
-        quantityTextView = findViewById(R.id.quantity_textView_cart);
+        orderTextView = findViewById(R.id.order_textView);
         chefNoteTextView = findViewById(R.id.chefNote_TextView_cart);
         deliveryOptTextView = findViewById(R.id.deliveryOpt_textView_cart);
         dateButton = findViewById(R.id.date_button);
@@ -58,15 +56,14 @@ public class CartActivity extends AppCompatActivity {
 
         dateButton.setText(setInitialDate());
 
-
-        String names = "";
         String quantities= "";
+        String orders = "";
+        String order;
         for (Dish dish: dishes) {
-            names = names.concat(dish.getName());
-            quantities = quantities.concat(dish.getQuantity().toString());
+            order = dish.getName() + dish.getQuantity().toString() + ", ";
+            orders += order;
         }
-        foodNameTextView.setText(names);
-        quantityTextView.setText(quantities);
+        orderTextView.setText(orders);
 
         chefNoteTextView.setText(chefNote);
         if (deliveryOpt) {

@@ -36,16 +36,10 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/foodName_textView_cart"
+            android:id="@+id/order_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fried Rice" />
-
-        <TextView
-            android:id="@+id/quantity_textView_cart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1" />
+            android:text="2 Fried Rice, 3 Noodle, 0 Satay" />
 
         <TextView
             android:id="@+id/chefNote_TextView_cart"

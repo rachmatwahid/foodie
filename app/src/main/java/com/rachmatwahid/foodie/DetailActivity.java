@@ -38,7 +38,7 @@ public class DetailActivity extends AppCompatActivity {
         descriptionTextView = findViewById(R.id.foodDescription_textView);
 
         foodNameTextView.setText(dish.getName());
-        descriptionTextView`.setText(dish.getDescription());
+        descriptionTextView.setText(dish.getDescription());
     }
 
     public void orderNow(View view) {
